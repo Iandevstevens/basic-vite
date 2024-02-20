@@ -1,0 +1,219 @@
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+a {
+  font-weight: 900;
+  text-decoration: inherit;
+}
+
+body {
+  margin: 0;
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgb(255, 255, 255);
+  background-color: #000000;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  min-height: 100vh;
+}
+
+button {
+  border-radius: 8px;
+  padding: 0.6em 1.2em !important;
+  font-size: 1em;
+  font-weight: 500;
+  font-family: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+  min-width: 60px;
+  margin-bottom: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: #999999;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  -moz-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #f8ce02;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #f8ce02;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px); /* IE 9 */
+  -moz-transform: translateX(26px);
+  -o-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.slider.round {
+  border-radius: 34px;
+  bottom: 0;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+
+.bottom {
+  position: absolute;
+  bottom: 0;
+  z-index: 100;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  width: 100vw;
+}
+
+.timer-container {
+  text-align: center;
+  color: white;
+  display: flex;
+  align-items: center;
+}
+
+.coin-container {
+  padding-right: 5px;
+}
+
+.countdown-container {
+  padding-left: 5px;
+}
+
+.side-drawer {
+  height: 100%;
+  background: white;
+  position: fixed;
+  top: 0;
+  left: -80%;
+  width: 80%;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translateX(0);
+  transition: transform 0.3s ease-out;
+  background-color: #000000;
+  border-right: 5px solid #f97316;
+}
+.side-drawer.open {
+  transform: translateX(100%);
+}
+
+@keyframes example {
+  0% {
+    bottom: 0px;
+  }
+  50% {
+    bottom: 8px;
+  }
+  100% {
+    bottom: 0px;
+  }
+}
+
+.nav-drawer {
+  width: 100vw;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 100%;
+  z-index: 30;
+  box-shadow: 1px 0px 7px rgba(0, 0, 0, 0.5);
+  transform: translateY(calc(100% - 2.5rem));
+  transition: transform 0.3s ease-out;
+  background-color: #000000;
+  animation-name: example;
+  animation-duration: 1s;
+  animation-iteration-count: 3;
+}
+.nav-drawer.open {
+  transform: translateY(0);
+}
+
+.slider-body {
+  height: calc(100% - 2.5rem);
+  overflow: scroll;
+}
+
+.holds-the-iframe {
+  background: url(../assets/gif/loading.gif) center center no-repeat;
+}
+
+#page-content {
+  position: relative;
+  /* this element's width controls the effective height */
+  /* of the video container's padding-bottom */
+  max-width: 640px;
+  margin: 10px auto;
+}
+
+#video-container {
+  position: relative;
+  /* forces the container to match a 16x9 aspect ratio */
+  /* replace with 75% for a 4:3 aspect ratio, if needed */
+  padding-bottom: 56.25%;
+}
+
+#video-element {
+  /* forces the contents to fill the container */
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.iframe-h {
+  height: calc(100vh - 40px);
+}
